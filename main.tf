@@ -10,6 +10,7 @@ resource "aws_instance" "instances" {
   ami           = var.ami
   instance_type = "t3.small"
   vpc_security_group_ids = var.vpc_security_group_ids
+  iam_instance_profile = "arn:aws:iam::739561048503:instance-profile/workstation-role"
 
   tags = {
     Name = "github-runner"
