@@ -1,4 +1,4 @@
 git pull
 docker login
-docker build -t rkalluru/github-runner:d87 .
-docker push rkalluru/github-runner:d87
+docker build -t Sandeepkumar0088/github-runner .
+docker push Sandeepkumar0088/github-runner
