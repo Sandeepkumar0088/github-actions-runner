@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "terraform-sandeep0088"
-    key    = "github/terraform.tfstate"
+    key    = "github-runner/terraform.tfstate"
     region = "us-east-1"
   }
 }
@@ -11,6 +11,8 @@ resource "aws_instance" "instances" {
   instance_type = "t3.small"
   vpc_security_group_ids = var.vpc_security_group_ids
   iam_instance_profile = "arn:aws:iam::389841108590:instance-profile/workstation"
+
+
   # iam_instance_profile = "arn:aws:iam::389841108590:instance-profile/sample"
   # "arn:aws:iam::389841108590:instance-profile/workstation"
   tags = {
