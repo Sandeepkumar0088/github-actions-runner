@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "terraform-state-b87"
+    bucket = "terraform-sandeep0088"
     key    = "github-runner/terraform.tfstate"
     region = "us-east-1"
   }
@@ -10,7 +10,7 @@ resource "aws_instance" "instances" {
   ami           = var.ami
   instance_type = "t3.small"
   vpc_security_group_ids = var.vpc_security_group_ids
-  iam_instance_profile = "arn:aws:iam::739561048503:instance-profile/workstation-role"
+  iam_instance_profile = "arn:aws:iam::389841108590:role/sample"
 
   tags = {
     Name = "github-runner"
@@ -31,7 +31,7 @@ resource "null_resource" "ansible" {
     inline = [
       "sudo dnf install python3.13-pip -y",
       "sudo pip3.11 install ansible",
-      "ansible-pull -i localhost, -U https://github.com/raghudevopsb87/github-actions-runner.git runner.yml -e TOKEN=${var.TOKEN}"
+      "ansible-pull -i localhost, -U https://github.com/sandeepkumar0088/github-actions-runner.git runner.yml -e TOKEN=${var.TOKEN}"
     ]
 
   }
@@ -43,6 +43,6 @@ variable "ami" {
   default = "ami-0220d79f3f480ecf5"
 }
 variable "vpc_security_group_ids" {
-  default = ["sg-09663d91a4fca31c9"]
+  default = ["sg-080ee07db03cf22ab"]
 }
 
