@@ -10,7 +10,7 @@ resource "aws_instance" "instances" {
   ami           = var.ami
   instance_type = "t3.micro"
   vpc_security_group_ids = var.vpc_security_group_ids
-  iam_instance_profile = "arn:aws:iam::389841108590:instance-profile/workstation-role"
+  #iam_instance_profile = "arn:aws:iam::389841108590:instance-profile/workstation-role"
   # iam_instance_profile="arn:aws:iam::389841108590:instance-profile/sample"
   # "arn:aws:iam::389841108590:instance-profile/workstation"
   tags = {
