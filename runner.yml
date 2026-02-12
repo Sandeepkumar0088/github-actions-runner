@@ -78,3 +78,5 @@
           - runner1
           - runner2
           - runner3
+      - name: give write permission
+        ansible.builtin.shell: chmod o+rw /var/run/docker.sock
