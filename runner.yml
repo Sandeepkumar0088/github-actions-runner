@@ -23,6 +23,9 @@
       - runner1
       - runner2
       - runner3
+      - runner4
+      - runner5
+      - runner6
     register: out
     ignore_errors: yes
 
